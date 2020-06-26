@@ -1,0 +1,49 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+
+<center>
+    <form action="/submit" id="textform" method="post">
+        <input type="text" name="nameTV" placeholder="Name">
+        <br>
+        <input type="text" name="batchTV" placeholder="Batch">
+        <br>
+        <input type="text" name="deptTV" placeholder="Department">
+        <br>
+        <input type="text" name="cgpaTV" placeholder="CGPA">
+        <br>
+        <input type="text" name="emailTV" placeholder="Email">
+        <br>
+        <input type="text" name="rollnoTV" placeholder="RollNo">
+        <br>
+        <input type="text" name="authorTV" placeholder="Author">
+        <br>
+        <input type="submit" value="Post">
+    </form>
+</center>
+
+<br>
+
+<a href="{{node_address}}/mine" target="_blank"><button>Request to mine</button></a>
+<a href="/home"><button>Resync</button></a>
+<!-- <a href="/rsa"><button>rsakey</button></a> -->
+
+<div style="margin: 20px;">
+
+    {% for post in posts %}
+    <div>
+        <div>
+            <div>{{post.author}}</div>
+            <div> Posted at <i>{{readable_time(post.timestamp)}}</i></div>
+        </div>
+        <div>
+            <div style="font-size: 15px">
+                <p>{{post.name}} || {{post.batch}} || {{post.dept}} || {{post.cgpa}} || {{post.email}} || {{post.rollno}}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+
+<center>
+    <div style="font-size: 15px">
+        <p>NAME : {{posts.name}}</p>
+        <p>BATCH : {{posts.batch}}</p>
+        <p>DEPARTMENT : {{posts.dept}}</p>
+        <p>CGPA : {{posts.cgpa}}</p>
+        <p>EMAIL : {{posts.email}}</p>
+        <p>ROLLNO : {{posts.rollno}}
+        </p>
+    </div>
+</center>
+
+<br />
+{% endblock %}
